@@ -1,6 +1,13 @@
 @import './commons/styles/colors.scss';
 
+:root {
+  font-size: 20px;
+  font-family: serif;
+}
 body,
 html {
   background-color: $clr-prime;
+}
+* {
+  box-sizing: border-box;
 }
