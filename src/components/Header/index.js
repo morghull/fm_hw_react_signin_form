@@ -1,16 +1,17 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from './../../logo.png';
+import styles from './Header.module.scss';
 
 const buttonsText = {
-  '/login': 'Sign in',
-  '/signup': 'Sign up',
+  '/login': 'Login',
+  '/signup': 'Signup',
 };
 
 const creatBbutton = (path) => {
   return (
     <Link to={path}>
-      <button>{buttonsText[path]}</button>
+      <button className={styles.btn}>{buttonsText[path]}</button>
     </Link>
   );
 };
@@ -21,8 +22,8 @@ const Header = () => {
     pathname === '/login' ? '/signup' : '/login'
   );
   return (
-    <section>
-      <Link to="/">
+    <section className={styles.header}>
+      <Link to="/" className={styles.logoWrapper}>
         <img src={logo} alt="logo"></img>
       </Link>
       {sideButton}
