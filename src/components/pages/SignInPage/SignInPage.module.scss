@@ -1,0 +1,14 @@
+@import '../../../commons/styles/colors.scss';
+@import '../../../commons/styles/templates.scss';
+
+.contaner {
+  @extend %flex;
+  flex-direction: column;
+}
+.title {
+  max-width: 80%;
+  font-size: 1.75rem;
+  color: $clr-font-prime;
+  text-transform: uppercase;
+  text-align: center;
+}
