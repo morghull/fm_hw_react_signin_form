@@ -1,0 +1,21 @@
+@import '../../../commons/styles/colors.scss';
+@import '../../../commons/styles/templates.scss';
+
+.form {
+  @extend %flex;
+  flex-direction: column;
+  width: 60%;
+  max-width: 30rem;
+}
+.submit {
+  @extend %threeDottedText;
+  width: 100%;
+  margin-top: .5rem;
+  padding: 1.3rem 1.3rem;
+  border: none;
+  background-color: $clr-btn-submit;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: $clr-font-prime;
+  text-transform: uppercase;
+}
