@@ -6,7 +6,7 @@ import styles from './InputWrapper.module.scss';
 const InputWrapper = (props) => {
   const { name, ...rest } = props;
   return (
-    <label>
+    <label className={styles.inputWrapper}>
       <Field name={name}>
         {({ field, form, meta }) => {
           const classNames = cx(styles.input, {
