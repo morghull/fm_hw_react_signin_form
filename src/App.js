@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import HomePage from './components/pages/HomePage';
@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<SignInPage />} />
-        <Route path="/signin" element={<h1>Signin</h1>} />
+        <Route path="/signup" element={<h1>Signup</h1>} />
       </Routes>
     </BrowserRouter>
   );

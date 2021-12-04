@@ -1,24 +1,33 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import logo from './../../logo.png';
 
-class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      navButtonText: 'SignUp',
-      navButtonLink: '/signup',
-    };
-  }
-  render() {
-    return (
-      <section>
-        <Link to="/">
-          <img src={logo}></img>
-        </Link>
-      </section>
-    );
-  }
-}
+const buttonsText = {
+  '/login': 'Sign in',
+  '/signup': 'Sign up',
+};
+
+const creatBbutton = (path) => {
+  return (
+    <Link to={path}>
+      <button>{buttonsText[path]}</button>
+    </Link>
+  );
+};
+
+const Header = () => {
+  const { pathname } = useLocation();
+  const sideButton = creatBbutton(
+    pathname === '/login' ? '/signup' : '/login'
+  );
+  return (
+    <section>
+      <Link to="/">
+        <img src={logo} alt="logo"></img>
+      </Link>
+      {sideButton}
+    </section>
+  );
+};
 
 export default Header;
