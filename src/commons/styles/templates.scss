@@ -1,0 +1,14 @@
+%flex {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+%boxing {
+  box-sizing: border-box;
+}
+%threeDottedText {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
