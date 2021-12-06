@@ -5,6 +5,7 @@ import styles from './InputWrapper.module.scss';
 
 const InputWrapper = (props) => {
   const { name, ...rest } = props;
+  const handlerErrorClick = ({ target }) => target.remove();
   return (
     <label className={styles.inputWrapper}>
       <Field name={name}>
@@ -13,8 +14,8 @@ const InputWrapper = (props) => {
             [styles.valid]: meta.touched && !meta.error,
             [styles.invalid]: meta.touched && meta.error,
           });
-          return (
-            <input className={classNames} {...field} {...rest} />
+          return (<>
+            <input className={classNames} {...field} {...rest} /><span/></>
           );
         }}
       </Field>
@@ -22,6 +23,7 @@ const InputWrapper = (props) => {
         name={name}
         component="div"
         className={styles.error}
+        onClick={handlerErrorClick}
       ></ErrorMessage>
     </label>
   );

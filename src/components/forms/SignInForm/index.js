@@ -2,6 +2,7 @@ import { Form, Formik } from 'formik';
 import React from 'react';
 import InputWrapper from '../InputWrapper';
 import styles from './SignInForm.module.scss';
+import {SIGN_IN_SCHEMA} from '../../../utils/schemasValidation';
 
 const initialValues = {
   email: '',
@@ -14,11 +15,15 @@ const SignInForm = () => {
     formikBag.resetForm();
   };
   return (
-    <Formik initialValues={initialValues} onSubmit={onSubmit}>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={onSubmit}
+      validationSchema={SIGN_IN_SCHEMA}
+    >
       <Form className={styles.form}>
         <InputWrapper
           name="email"
-          type="email"
+          type="text"
           placeholder="Email address"
         />
         <InputWrapper

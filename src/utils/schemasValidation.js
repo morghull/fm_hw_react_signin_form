@@ -12,12 +12,16 @@ export const EMAIL_SCHEMA = Yup.string()
 
 export const PASSWORD_SCHEMA = Yup.string()
   .matches(
-    /^(?=.*?[A-Z]),(?=.*?[a-z])(?=.*?[0=9])(?=.*?[#?!@$ %^&*-]).{8,32}$/,
+    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,32}$/,
     'Enter correct password, please'
   )
   .required(requiredDefaultMessage);
 
 export const SIGN_IN_SCHEMA = Yup.object({
+  email: EMAIL_SCHEMA,
+  password: PASSWORD_SCHEMA,
+});
+export const SIGN_UP_SCHEMA = Yup.object({
   email: EMAIL_SCHEMA,
   password: PASSWORD_SCHEMA,
 });

@@ -3,6 +3,7 @@
 
 .inputWrapper {
   width: 100%;
+  position: relative;
 }
 .inputWrapper + .inputWrapper {
   margin-top: 0.5rem;
@@ -10,19 +11,70 @@
 .input {
   width: 100%;
   padding: 1.3rem 1.3rem;
-  border: none;
+  border: 0.15rem solid transparent;
   border-radius: 0.2rem;
   font-size: 0.8rem;
   color: $clr-font-inputs;
   outline: none;
 }
+.valid+span::after {
+  content: '';
+  width: .5rem;
+  height: 1rem;
 
-.valid {
-  color: red;
+  display: inline-block;
+  position: absolute;
+  right: 1rem;
+  top: 25%;
+
+  transform: rotate(45deg);
+
+  border-right: 0.3rem solid $clr-valid;
+  border-bottom: 0.3rem solid $clr-valid;
+  border-radius: 15%;
+  z-index: 100;
 }
 .invalid {
-  color: red;
+  border: 0.15rem solid $clr-invalid;
 }
 .error {
-  color: red;
+  width: 80%;
+  position: absolute;
+  top: 65%;
+  left: 3rem;
+
+  padding: 0.3rem 0.3rem;
+  border-radius: 0.2rem;
+
+  background-color: $clr-invalid;
+  color: $clr-font-prime;
+  z-index: 100;
+}
+.error::before {
+  content: '';
+  width: 0;
+  height: 0;
+
+  display: inline-block;
+  position: absolute;
+  top: -0.125rem;
+  left: -1.25rem;
+
+  border-left: 0.4rem solid transparent;
+  border-right: 0.4rem solid transparent;
+  border-bottom: 0.4rem solid $clr-invalid;
+}
+.error::after {
+  content: '';
+  width: 1rem;
+  height: 0.75rem;
+
+  display: inline-block;
+  position: absolute;
+  left: -1rem;
+  top: 0;
+
+  border-left: 0.3rem solid $clr-invalid;
+  border-bottom: 0.3rem solid $clr-invalid;
+  border-radius: 15%;
 }
