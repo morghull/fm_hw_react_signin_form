@@ -1,0 +1,27 @@
+@import '../../../commons/styles/colors.scss';
+@import '../../../commons/styles/templates.scss';
+
+.menu {
+  @extend %flex;
+  justify-content: flex-start;
+
+  width: 100%;
+
+  list-style: none;
+}
+.menuitem+.menuitem {
+   margin-left: .5rem;
+}
+.btn {
+  padding: 0.5rem 0.75rem;
+  border: 0.01rem solid $clr-font-prime;
+  border-radius: 0.2rem;
+  background-color: $clr-prime;
+  color: $clr-font-prime;
+  font-size: inherit;
+  font-weight: bold;
+  text-decoration: none;
+}
+.btn:hover {
+  filter: brightness(105%);
+}
