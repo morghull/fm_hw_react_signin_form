@@ -50,24 +50,22 @@ const SignUpForm = () => {
         <ShortInputWrapper
           name="passwordconf"
           type="password"
-          placeholder="Password COnfirmation"
+          placeholder="Password Confirmation"
         />
-        <label>
-          <input name="join" type="radio" value="buyer" />
-          <h3>Join As a Buyer</h3>
+        <InputWrapper name="join" type="radio" value="buyer">
+          <h4>Join As a Buyer</h4>
           <span>
             I am looking for a Name, Logo or Tagline for my business,
             brand or product.
           </span>
-        </label>
-        <label>
-          <input name="join" type="radio" value="seller" />
-          <h3>Join As a Creative or Marketplace Seller</h3>
+        </InputWrapper>
+        <InputWrapper name="join" type="radio" value="buyer">
+          <h4>Join As a Creative or Marketplace Seller</h4>
           <span>
             I plan to submit name ideas, Logo designs or sell names in
             Domain Marketplace.
           </span>
-        </label>
+        </InputWrapper>
         <button className={styles.submit} type="submit">
           Create account
         </button>

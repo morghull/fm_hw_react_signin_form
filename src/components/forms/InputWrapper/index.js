@@ -4,7 +4,7 @@ import cx from 'classnames';
 import styles from './InputWrapper.module.scss';
 
 const InputWrapper = (props) => {
-  const { name, ...rest } = props;
+  const { name, children, ...rest } = props;
   return (
     <label className={styles.inputWrapper}>
       <Field name={name}>
@@ -13,8 +13,11 @@ const InputWrapper = (props) => {
             [styles.valid]: meta.touched && !meta.error,
             [styles.invalid]: meta.touched && meta.error,
           });
-          return (<>
-            <input className={classNames} {...field} {...rest} /><span/></>
+          return (
+            <>
+              <input className={classNames} {...field} {...rest} />
+              <span />
+            </>
           );
         }}
       </Field>
@@ -23,6 +26,7 @@ const InputWrapper = (props) => {
         component="div"
         className={styles.error}
       ></ErrorMessage>
+      {children}
     </label>
   );
 };

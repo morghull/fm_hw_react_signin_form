@@ -8,7 +8,8 @@
 .inputWrapper + .inputWrapper {
   margin-top: 0.5rem;
 }
-.input {
+.input[type="text"],
+.input[type="password"] {
   width: 100%;
   padding: 1.3rem 1.3rem;
   border: 0.15rem solid transparent;
@@ -17,7 +18,8 @@
   color: $clr-font-inputs;
   outline: none;
 }
-.valid+span::after {
+.valid[type="text"]+span::after,
+.valid[type="password"]+span::after {
   content: '';
   width: .5rem;
   height: 1rem;
@@ -34,7 +36,8 @@
   border-radius: 15%;
   z-index: 100;
 }
-.invalid {
+.invalid[type="text"],
+.invalid[type="password"] {
   border: 0.15rem solid $clr-invalid;
 }
 .error {
