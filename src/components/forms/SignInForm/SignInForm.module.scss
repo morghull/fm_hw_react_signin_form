@@ -4,8 +4,8 @@
 .form {
   @extend %flex;
   flex-direction: column;
-  width: 60%;
-  max-width: 30rem;
+  width: 70%;
+  max-width: 35rem;
 }
 .submit {
   @extend %threeDottedText;
