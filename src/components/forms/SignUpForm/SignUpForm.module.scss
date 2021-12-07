@@ -1,0 +1,24 @@
+@import '../../../commons/styles/colors.scss';
+@import '../../../commons/styles/templates.scss';
+
+.form {
+   @extend %flex;
+   flex-flow: row wrap;
+   width: 70%;
+   max-width: 35rem;
+ }
+ .submit {
+   @extend %threeDottedText;
+   width: 100%;
+   margin-top: 0.5rem;
+   padding: 1.3rem 1.3rem;
+   border: none;
+   background-color: $clr-btn-submit;
+   cursor: pointer;
+   font-size: 0.8rem;
+   font-weight: bold;
+   color: $clr-font-prime;
+ }
+ .submit:hover {
+   filter: brightness(105%);
+ }
